@@ -1,25 +1,57 @@
 <h1>Desk API</h1><br/>
 
-<strong>See Status report :</strong>
-<button type="button" id="show_status_btn">Status</button>
+<strong>List cases :</strong>
+<button type="button" id="show_status_btn">Case</button>
 <br /><br />
 <strong>Retrive All labels :</strong>
 <button type="button" id="show_labels_btn">Labels</button>
-<div id="Tree"></div>
+<br /><br />
+<div id="information">
+  <ul class="result-items" style="border:1px solid #666; padding: 30px;"></ul>
+</div>
 
 <script type="text/javascript">
-  $(document).ready(function () {
-    $("#show_status_btn").click(function() {
-      window.location = '/desk/cases'
-    });
 
+  $("#show_status_btn").click(function() {
+    _temp     = $('div#information ul.result-items').empty();
+    _api      = "/desk/cases"
+    renderCase(_api);
   });
 
-  $(document).ready(function () {
-    $("#show_labels_btn").click(function() {
-      window.location = '/desk/retrive_labels'
-    });
-
+  $("#show_labels_btn").click(function() {
+    _temp     = $('div#information ul.result-items').empty();
+    _api      = '/desk/retrive_labels'
+    renderLable(_api);
   });
+
+  var renderCase = function(_api) {
+    targetEle = $(document.body).find('div#information ul.result-items');
+
+    targetEle.append("<b>ONLY CASES DESCRIPTION ARE LISTED<b>");
+    targetEle.append('<br><br>');
+
+    $.get(_api, function(data) {
+      $.each(data, function() {
+        var ele = '<li>' + this.blurb + '</li>';
+        targetEle.append(ele);
+        targetEle.append('<br>');
+      });
+    })
+  }
+
+  var renderLable = function(_api) {
+    targetEle = $(document.body).find('div#information ul.result-items');
+
+    $.get(_api, function(data) {
+      targetEle.append("<b>ONLY LABLES NAME ARE LISTED</b>");
+      targetEle.append('<br><br>');
+      $.each(data, function() {
+        console.log(this)
+        var ele = '<li>' + this.name + '</li>';
+        targetEle.append(ele);
+        targetEle.append('<br>');
+      });
+    })
+  }
+
 </script>
-
