@@ -1,0 +1,25 @@
+<h1>Desk API</h1><br/>
+
+<strong>See Status report :</strong>
+<button type="button" id="show_status_btn">Status</button>
+<br /><br />
+<strong>Retrive All labels :</strong>
+<button type="button" id="show_labels_btn">Labels</button>
+<div id="Tree"></div>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    $("#show_status_btn").click(function() {
+      window.location = '/desk/cases'
+    });
+
+  });
+
+  $(document).ready(function () {
+    $("#show_labels_btn").click(function() {
+      window.location = '/desk/retrive_labels'
+    });
+
+  });
+</script>
+
