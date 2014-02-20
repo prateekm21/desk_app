@@ -1,32 +1,32 @@
-class TokenHandler < ActiveRecord::Base
+class TokenHandler
 
-  attr_accessor :consumer, :access_token
+  attr_reader :consumer, :access_token
+
+  KEY      = '2HRjyOBd0RmnkzJC7sIM'
+  SECRET   = 'FoCmm2r3XVp5lRkYIE8TbSNN9HZKMpmzWBf3HdKc'
+
+  TOKEN    = '2NmGyiRzCEV8ZeZoLJOY'
+  TOKEN_S  = '2SVwG9Rin2s8RrxviPShLoEIWyaXEUJvvVPGEIJl'
 
   def initialize
-    @key      = '2HRjyOBd0RmnkzJC7sIM'
-    @secret   = 'FoCmm2r3XVp5lRkYIE8TbSNN9HZKMpmzWBf3HdKc'
-
-    @token    = '2NmGyiRzCEV8ZeZoLJOY'
-    @token_s  = '2SVwG9Rin2s8RrxviPShLoEIWyaXEUJvvVPGEIJl'
-
-    self.consumer
-    self.access_token
+    create_consumer_obj
+    create_access_token
   end
 
-  def consumer
+  def create_consumer_obj
     @consumer = OAuth::Consumer.new(
-      @key,
-      @secret,
-      :site => "",
+      KEY,
+      SECRET,
+      :site   => "http://pmcompany.desk.com",
       :scheme => :header
     )
   end
 
-  def access_token
+  def create_access_token
     @access_token = OAuth::AccessToken.from_hash(
         @consumer,
-        :oauth_token => @token,
-        :oauth_token_secret => @token_s
+        :oauth_token => TOKEN,
+        :oauth_token_secret => TOKEN_S
     )
   end
 
