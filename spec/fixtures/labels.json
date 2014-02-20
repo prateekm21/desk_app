@@ -1,0 +1,133 @@
+{
+    "total_entries": 7,
+    "_links": {
+        "self": {
+            "href": "/api/v2/labels?page=1&per_page=50",
+            "class": "page"
+        },
+        "first": {
+            "href": "/api/v2/labels?page=1&per_page=50",
+            "class": "page"
+        },
+        "last": {
+            "href": "/api/v2/labels?page=1&per_page=50",
+            "class": "page"
+        },
+        "previous": null,
+        "next": null
+    },
+    "_embedded": {
+        "entries": [
+            {
+                "name": "Abandoned Chats",
+                "description": "Abandoned Chats",
+                "enabled": true,
+                "types": [
+                    "case",
+                    "macro"
+                ],
+                "color": "default",
+                "_links": {
+                    "self": {
+                        "href": "/api/v2/labels/1670280",
+                        "class": "label"
+                    }
+                }
+            },
+            {
+                "name": "Escalated",
+                "description": "Escalated",
+                "enabled": true,
+                "types": [
+                    "case",
+                    "macro"
+                ],
+                "color": "default",
+                "_links": {
+                    "self": {
+                        "href": "/api/v2/labels/1670279",
+                        "class": "label"
+                    }
+                }
+            },
+            {
+                "name": "Example",
+                "description": "Example",
+                "enabled": true,
+                "types": [
+                    "case"
+                ],
+                "color": "default",
+                "_links": {
+                    "self": {
+                        "href": "/api/v2/labels/1670277",
+                        "class": "label"
+                    }
+                }
+            },
+            {
+                "name": "Feedback",
+                "description": "Feedback",
+                "enabled": true,
+                "types": [
+                    "case",
+                    "macro"
+                ],
+                "color": "default",
+                "_links": {
+                    "self": {
+                        "href": "/api/v2/labels/1670275",
+                        "class": "label"
+                    }
+                }
+            },
+            {
+                "name": "More Info",
+                "description": "More Info",
+                "enabled": true,
+                "types": [
+                    "case",
+                    "macro"
+                ],
+                "color": "default",
+                "_links": {
+                    "self": {
+                        "href": "/api/v2/labels/1670276",
+                        "class": "label"
+                    }
+                }
+            },
+            {
+                "name": "Negative Feedback",
+                "description": "Negative Feedback",
+                "enabled": true,
+                "types": [
+                    "case",
+                    "macro"
+                ],
+                "color": "default",
+                "_links": {
+                    "self": {
+                        "href": "/api/v2/labels/1670278",
+                        "class": "label"
+                    }
+                }
+            },
+            {
+                "name": "Sample Macros",
+                "description": "Sample Macros",
+                "enabled": true,
+                "types": [
+                    "macro"
+                ],
+                "color": "default",
+                "_links": {
+                    "self": {
+                        "href": "/api/v2/labels/1670274",
+                        "class": "label"
+                    }
+                }
+            }
+        ]
+    }
+}

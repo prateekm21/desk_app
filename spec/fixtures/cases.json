@@ -1,3 +1,228 @@
 {
-    "test_type" : "AVALANCHE"
+    "total_entries": 3,
+    "_links": {
+        "self": {
+            "href": "/api/v2/cases?page=1&per_page=50",
+            "class": "page"
+        },
+        "first": {
+            "href": "/api/v2/cases?page=1&per_page=50",
+            "class": "page"
+        },
+        "last": {
+            "href": "/api/v2/cases?page=1&per_page=50",
+            "class": "page"
+        },
+        "previous": null,
+        "next": null
+    },
+    "_embedded": {
+        "entries": [
+            {
+                "id": 1,
+                "external_id": null,
+                "blurb": "Thanks for trying Desk.com. We hope your trial goes well and you decide to use Desk.com to wow your customers. Please let us know if there is anything we can do to make your experience better. In the meantime see the tips below for getting started...",
+                "subject": "Welcome to Desk.com",
+                "priority": 4,
+                "locked_until": null,
+                "description": null,
+                "status": "open",
+                "type": "email",
+                "labels": [
+                    "Example"
+                ],
+                "language": "en",
+                "active_at": "2014-02-20T00:17:41Z",
+                "created_at": "2014-02-17T17:54:02Z",
+                "updated_at": "2014-02-17T18:33:36Z",
+                "received_at": "2014-02-17T17:54:02Z",
+                "first_opened_at": "2014-02-17T18:33:36Z",
+                "opened_at": "2014-02-17T18:33:36Z",
+                "first_resolved_at": null,
+                "resolved_at": null,
+                "custom_fields": {},
+                "_links": {
+                    "self": {
+                        "href": "/api/v2/cases/1",
+                        "class": "case"
+                    },
+                    "message": {
+                        "href": "/api/v2/cases/1/message",
+                        "class": "email"
+                    },
+                    "customer": {
+                        "href": "/api/v2/customers/157199179",
+                        "class": "customer"
+                    },
+                    "assigned_user": {
+                        "href": "/api/v2/users/21761996",
+                        "class": "user"
+                    },
+                    "assigned_group": {
+                        "href": "/api/v2/groups/392540",
+                        "class": "group"
+                    },
+                    "locked_by": null,
+                    "history": {
+                        "href": "/api/v2/cases/1/history",
+                        "class": "history"
+                    },
+                    "replies": {
+                        "href": "/api/v2/cases/1/replies",
+                        "class": "reply",
+                        "count": 0
+                    },
+                    "draft": {
+                        "href": "/api/v2/cases/1/replies/draft",
+                        "class": "reply"
+                    },
+                    "notes": {
+                        "href": "/api/v2/cases/1/notes",
+                        "class": "note",
+                        "count": 0
+                    },
+                    "attachments": {
+                        "href": "/api/v2/cases/1/attachments",
+                        "class": "attachment",
+                        "count": 0
+                    }
+                }
+            },
+            {
+                "id": 2,
+                "external_id": null,
+                "blurb": "Desk.com is a single place to keep track of all your customers online correspondence (email, chats), social media conversation (Facebook, Twitter), and offline contacts (phone).\n\nRECORD PHONE - In the upper right there is a New Case button, this is h",
+                "subject": "Welcome to Desk.com",
+                "priority": 9,
+                "locked_until": null,
+                "description": null,
+                "status": "open",
+                "type": "phone",
+                "labels": [
+                    "Example"
+                ],
+                "language": "en",
+                "active_at": "2014-02-20T01:42:19Z",
+                "created_at": "2014-02-17T17:54:02Z",
+                "updated_at": "2014-02-17T17:54:34Z",
+                "received_at": "2014-02-17T17:54:02Z",
+                "first_opened_at": "2014-02-17T17:54:34Z",
+                "opened_at": "2014-02-17T17:54:34Z",
+                "first_resolved_at": null,
+                "resolved_at": null,
+                "custom_fields": {},
+                "_links": {
+                    "self": {
+                        "href": "/api/v2/cases/2",
+                        "class": "case"
+                    },
+                    "message": {
+                        "href": "/api/v2/cases/2/message",
+                        "class": "phone"
+                    },
+                    "customer": {
+                        "href": "/api/v2/customers/157199179",
+                        "class": "customer"
+                    },
+                    "assigned_user": {
+                        "href": "/api/v2/users/21761996",
+                        "class": "user"
+                    },
+                    "assigned_group": {
+                        "href": "/api/v2/groups/392540",
+                        "class": "group"
+                    },
+                    "locked_by": null,
+                    "history": {
+                        "href": "/api/v2/cases/2/history",
+                        "class": "history"
+                    },
+                    "replies": {
+                        "href": "/api/v2/cases/2/replies",
+                        "class": "reply",
+                        "count": 0
+                    },
+                    "draft": {
+                        "href": "/api/v2/cases/2/replies/draft",
+                        "class": "reply"
+                    },
+                    "notes": {
+                        "href": "/api/v2/cases/2/notes",
+                        "class": "note",
+                        "count": 0
+                    },
+                    "attachments": {
+                        "href": "/api/v2/cases/2/attachments",
+                        "class": "attachment",
+                        "count": 0
+                    }
+                }
+            },
+            {
+                "id": 3,
+                "external_id": null,
+                "blurb": "This is test case created by Prateek Mehrotra",
+                "subject": "Test case by PM",
+                "priority": 9,
+                "locked_until": null,
+                "description": "",
+                "status": "pending",
+                "type": "phone",
+                "labels": [],
+                "language": "en",
+                "active_at": "2014-02-20T01:45:03Z",
+                "created_at": "2014-02-20T01:43:00Z",
+                "updated_at": "2014-02-20T01:45:16Z",
+                "received_at": "2014-02-20T01:43:00Z",
+                "first_opened_at": "2014-02-20T01:43:01Z",
+                "opened_at": "2014-02-20T01:43:01Z",
+                "first_resolved_at": null,
+                "resolved_at": null,
+                "custom_fields": {},
+                "_links": {
+                    "self": {
+                        "href": "/api/v2/cases/3",
+                        "class": "case"
+                    },
+                    "message": {
+                        "href": "/api/v2/cases/3/message",
+                        "class": "phone"
+                    },
+                    "customer": {
+                        "href": "/api/v2/customers/157199179",
+                        "class": "customer"
+                    },
+                    "assigned_user": null,
+                    "assigned_group": {
+                        "href": "/api/v2/groups/392540",
+                        "class": "group"
+                    },
+                    "locked_by": null,
+                    "history": {
+                        "href": "/api/v2/cases/3/history",
+                        "class": "history"
+                    },
+                    "replies": {
+                        "href": "/api/v2/cases/3/replies",
+                        "class": "reply",
+                        "count": 0
+                    },
+                    "draft": {
+                        "href": "/api/v2/cases/3/replies/draft",
+                        "class": "reply"
+                    },
+                    "notes": {
+                        "href": "/api/v2/cases/3/notes",
+                        "class": "note",
+                        "count": 1
+                    },
+                    "attachments": {
+                        "href": "/api/v2/cases/3/attachments",
+                        "class": "attachment",
+                        "count": 0
+                    }
+                }
+            }
+        ]
+    }
 }
