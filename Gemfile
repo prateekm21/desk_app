@@ -7,6 +7,16 @@ gem 'rails', '3.2.12'
 
 gem 'sqlite3'
 
+gem 'oauth'
+
+group :test, :development do
+  gem 'thin', '1.6.1'
+  gem 'ci_reporter','~> 1.7.0'
+  gem 'awesome_print', '1.1.0'
+  gem 'rspec-rails', '2.13.1'
+  gem 'guard-rspec'
+  gem 'rb-fsevent', '~> 0.9.1'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -37,4 +47,3 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
-gem 'oauth'
