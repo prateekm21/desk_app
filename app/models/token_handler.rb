@@ -31,8 +31,9 @@ class TokenHandler
   end
 
   def data(url)
-    response = @access_token.get(url)
-    JSON.parse(response.body)
+    response = @access_token.get(url) rescue nil
+    response = JSON.parse(response.body) if response
+    response
   end
 
 end
