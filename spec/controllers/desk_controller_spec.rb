@@ -26,4 +26,26 @@ describe DeskController do
     end
   end
 
+  describe "POST :create_label" do
+    it "should return error if :label is missing in request" do
+
+      post :create_label
+
+      response.body.should be_true
+
+      (JSON.parse(response.body))['error'].should eql('label missing')
+      response.status.should eql(422)
+    end
+
+    it "should return info after label create request" do
+      case_info = {info: true, status: 200}
+      Desk.should_receive(:add_label).and_return(case_info)
+
+      post :create_label, :label => "test"
+
+      response.body.should be_true
+      response.status.should eql(200)
+    end
+  end
+
 end

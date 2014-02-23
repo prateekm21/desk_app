@@ -54,7 +54,7 @@ describe TokenHandler do
     end
   end
 
-  describe ".data" do
+  describe ".get_data" do
     it "should return desired json" do
       _url = "https://pmcompany.desk.com/api/v2/labels"
       obj  = TokenHandler.new
@@ -64,11 +64,27 @@ describe TokenHandler do
 
       obj.access_token.stub(:get).with(_url).and_return(res)
 
-      resp = obj.data(_url)
+      resp = obj.get_data(_url)
 
       resp['x'].should eql('data')
     end
 
   end
-end
 
+  describe ".post_data" do
+    it "should post data to web" do
+      _url    = "https://pmcompany.desk.com/api/v2/labels"
+      obj     = TokenHandler.new
+      options = {
+          'Accept'      =>'application/json',
+          'Content-Type'=> 'application/json'
+      }
+
+      obj.access_token.stub(:post).with(_url,{}.to_json,options).and_return({okay:true})
+
+      resp = obj.post_data(_url, {})
+      resp[:okay].should be_true
+    end
+
+  end
+end

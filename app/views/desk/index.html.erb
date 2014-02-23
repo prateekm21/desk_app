@@ -3,9 +3,23 @@
 <strong>List cases :</strong>
 <button type="button" id="show_status_btn">Case</button>
 <br /><br />
+
 <strong>Retrive All labels :</strong>
 <button type="button" id="show_labels_btn">Labels</button>
 <br /><br />
+
+<form>
+  <strong>Add label:</strong><br>
+  Name:        <input type="text" id ="name" name="name"><br>
+  Description: <input  type="text" id ="description" name="description"><br>
+  Type:        <input  type="text" id ="type" name="type"><br>
+  Color:       <input  type="text" id ="color" name="color"><br>
+  <button type="button" id="add_label">Add new label</button>
+
+  <div id="add_label_result"></div>
+
+</form>
+
 <div id="information">
   <ul class="result-items" style="border:1px solid #666; padding: 30px;"></ul>
 </div>
@@ -23,6 +37,35 @@
     _api      = '/desk/retrive_labels'
     renderLable(_api);
   });
+
+  $("#add_label").click(function() {
+    _temp     = $('div#add_label_result').empty();
+    _api      = '/desk/create_label'
+    name      = $("input#name").val()
+    desc      = $("input#description").val()
+    type      = $("input#type").val()
+    color     = $("input#color").val()
+
+
+    add_label(_api,name,desc,type,color);
+  });
+
+  var add_label = function(_api,name,desc,type,color) {
+    targetEle = $(document.body).find('div#add_label_result');
+    data_obj = {
+      label: name,
+      description: desc,
+      type: type,
+      color: color
+    }
+
+    $.post(_api, data_obj, function(data) {
+       targetEle.append('<strong>'+data.success+'</strong>')
+    }).error(function(xhr, status, error){
+        err = xhr.responseText
+        targetEle.append('<strong>'+err+'</strong>')
+    });
+  }
 
   var renderCase = function(_api) {
     targetEle = $(document.body).find('div#information ul.result-items');
