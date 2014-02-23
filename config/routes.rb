@@ -7,7 +7,7 @@ DeskApp::Application.routes.draw do
     collection do
       get  :cases
       get  :retrive_labels
-      post :labels_create
+      post :create_label
     end
   end
 
