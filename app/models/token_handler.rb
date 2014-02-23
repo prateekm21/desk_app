@@ -30,9 +30,19 @@ class TokenHandler
     )
   end
 
-  def data(url)
+  def get_data(url)
     response = @access_token.get(url) rescue nil
     response = JSON.parse(response.body) if response
+    response
+  end
+
+  def post_data(url, data)
+    options = {
+        'Accept'      =>'application/json',
+        'Content-Type'=> 'application/json'
+    }
+
+    response = @access_token.post(url,data.to_json,options) rescue nil
     response
   end
 
