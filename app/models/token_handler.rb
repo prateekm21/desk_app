@@ -46,4 +46,15 @@ class TokenHandler
     response
   end
 
+  def put_data(url, data)
+    options = {
+        'Accept'      =>'application/json',
+        'Content-Type'=> 'application/json'
+    }
+
+    response = @access_token.put(url,data.to_json,options) rescue nil
+    response
+  end
+
+
 end

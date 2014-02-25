@@ -87,4 +87,21 @@ describe TokenHandler do
     end
 
   end
+
+  describe ".put_data" do
+    it "should put data to web" do
+      _url    = "https://pmcompany.desk.com/api/v2/cases/1"
+      obj     = TokenHandler.new
+      options = {
+          'Accept'      =>'application/json',
+          'Content-Type'=> 'application/json'
+      }
+
+      obj.access_token.stub(:put).with(_url,{}.to_json,options).and_return({okay:true})
+
+      resp = obj.put_data(_url, {})
+      resp[:okay].should be_true
+    end
+
+  end
 end
