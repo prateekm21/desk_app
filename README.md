@@ -3,6 +3,13 @@
 * **Author:**  Prateek Mehrotra
 * **Contact:** prateek123 at gmail dot com
 
+
+***
+
+UI is bare minimum and can be enhanced. I dont have exposure to Angular so I used rails view and simple JS to render
+
+[UI work flow](https://github.com/prateekm21/desk_app/wiki/UI-work-flow)
+
 ***
 
 **Heroku** | [http://shrouded-harbor-3396.herokuapp.com/](http://shrouded-harbor-3396.herokuapp.com/)
