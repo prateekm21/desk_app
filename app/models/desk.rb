@@ -8,6 +8,10 @@ class Desk
     TokenHandler.new.post_data(_url, data)
   end
 
+  def self.token_handler_put(_url, data)
+    TokenHandler.new.put_data(_url, data)
+  end
+
   def self.retrive_all_cases
     _url     =  "https://pmcompany.desk.com/api/v2/cases"
     response = token_handler_get _url
@@ -77,8 +81,18 @@ class Desk
     if response.instance_of?(Net::HTTPClientError)
       return {info:{error: JSON.parse(response.body)}, status: 422}
     else
-      return {info:{success: "label added"}, status: 200}
+      self.update_case(params[:label])
+      return {info:{success: "label added and applied to case#1"}, status: 200}
     end
   end
+
+  def self.update_case label
+    _url   =  "https://pmcompany.desk.com/api/v2/cases/1"
+    data   = {
+      labels: [label]
+    }
+    response = token_handler_put(_url, data)
+    response
+  end  
 
 end

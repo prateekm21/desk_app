@@ -69,6 +69,8 @@ describe Desk do
     end
 
     it "should return return response when label added" do
+      Desk.should_receive(:update_case).and_return(true)
+
       params   = {color: "blue", type: "case"}
       Desk.should_receive(:token_handler_post).and_return({test: true})
 
@@ -76,6 +78,18 @@ describe Desk do
 
       response.should be_instance_of(Hash)
       response[:status].should eql(200)
+    end
+  end
+
+  describe "#update_case" do
+
+    it "should apply label to first case" do
+      Desk.should_receive(:token_handler_put).and_return({test: true})
+      params   = {labels: "test"}
+      response = Desk.update_case params
+
+      response.should be_instance_of(Hash)
+      response[:test].should be_true
     end
   end
 
